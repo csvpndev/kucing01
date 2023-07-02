@@ -278,9 +278,8 @@ chmod +x /root/.acme.sh/acme.sh
 # // Success
 echo -e "${OKEY} Your Domain : $domain"
 sleep 2
-
 # // ELif For Selection 1
-elif [[ $choose_domain == "1" ]]; then
+#elif [[ $choose_domain == "1" ]]; then
 
 # // Clear
 clear
