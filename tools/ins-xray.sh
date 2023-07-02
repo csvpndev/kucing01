@@ -110,6 +110,18 @@ timedatectl set-timezone Asia/Jakarta
 apt install curl pwgen openssl netcat cron -y
 
 # Make Folder & Log XRay & Log Trojan
+    print_install "Membuat direktori xray"
+    mkdir -p /etc/{xray,vmess,websocket,vless,trojan,shadowsocks}
+    # mkdir -p /usr/sbin/xray/
+    mkdir -p /var/www/html/
+    mkdir -p /etc/geostore/
+#    chmod +x /var/log/xray
+    touch /etc/vmess/.vmess.db
+    touch /etc/vless/.vless.db
+    touch /etc/trojan/.trojan.db
+    touch /etc/ssh/.ssh.db
+    touch /etc/shadowsocks/.shadowsocks.db
+    clear
 rm -fr /var/log/xray
 #rm -fr /var/log/trojan
 rm -fr /home/vps/public_html
@@ -124,6 +136,9 @@ touch /var/log/xray/access.log
 touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
+touch /var/log/xray/access3.log
+touch /var/log/xray/error3.log
+chmod +x /var/log/xray/*.log
 # Make Log Autokill & Log Autoreboot
 rm -fr /root/log-limit.txt
 rm -fr /root/log-reboot.txt
