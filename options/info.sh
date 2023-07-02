@@ -128,14 +128,15 @@ echo -e "\033[1;91m  SYSTEM UPTIME : $uphours $upminutes \e[0m"
 fi
 echo -e "\033[1;91m  OS VPS        : "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
 echo -e "\033[1;91m  MEMORY USAGE  : $uram / $tram \e[0m"
-echo -e "\033[1;91m  ISP VPS       : $(curl -s ipinfo.io/org | cut -d " " -f 2-10 ) \e[0m"echo -e "\033[1;91m  REGION        : $(curl -s ipinfo.io/timezone ) \e[0m"
+echo -e "\033[1;91m  ISP VPS       : $(curl -s ipinfo.io/org | cut -d " " -f 2-10 ) \e[0m"
+echo -e "\033[1;91m  REGION        : $(curl -s ipinfo.io/timezone ) \e[0m"
 echo -e "\033[1;91m  CITY          : $(curl -s ipinfo.io/city ) \e[0m"
 echo -e "\033[1;91m  DOMAIN        : $(cat /etc/xray/domain)\e[0m"
 echo -e "\033[1;91m  DATE&TIME     : $( date -d "0 days" +"%d-%m-%Y | %X" )\e[0m"
 echo -e "┌──────────────────────────────────────────┐" | lolcat
 echo -e "│           AUTOSCRIPT INFORMATION         │" | lolcat       
 echo -e "└──────────────────────────────────────────┘" | lolcat
-echo -e "  Owner        : Cobek Sawit Tunnel " | lolcat
+echo -e "\033[1;96m  Owner        : Cobek Sawit Tunnel \e[0m"
 echo -e "\033[1;96m  Contact WA   : 083831678849 \e[0m"
 echo -e "\033[1;96m  Telegram     : t.me/cobeksawitofficial \e[0m"
 echo -e "\033[1;96m  Official     : t.me/csvpngrup \e[0m"
