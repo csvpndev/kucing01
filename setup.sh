@@ -199,6 +199,7 @@ echo -e "2. Menggunakan Domain Otomatis ?"
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
 echo ""
 read -p "$( echo -e "${GREEN}Input Your Choose ? ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
+
 if [[ $choose_domain == "2" ]]; then # // Using Automatic Domain
 # // Folder Sistem Yang Tidak Boleh Di Hapus
 mkdir -p /usr/bin
@@ -278,8 +279,8 @@ chmod +x /root/.acme.sh/acme.sh
 # // Success
 echo -e "${OKEY} Your Domain : $domain"
 sleep 2
-# // ELif For Selection 1
-#elif [[ $choose_domain == "1" ]]; then
+
+elif [[ $choose_domain == "1" ]]; then
 
 # // Clear
 clear
