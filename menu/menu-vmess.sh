@@ -109,29 +109,26 @@ clear
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-                echo -e "│                CHEK DETAIL VMESS                │" | lolcat
-                echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               CHECK DETAIL VMESS                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 clear
                 exit 1
         fi
 
-                echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-                echo -e "│                CHEK DETAIL VMESS                │" | lolcat
-                echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               CHECK DETAIL VMESS                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
         echo " Select the existing client to view the config"
         echo " Press CTRL+C to return"
-                echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo "     No  User   Expired"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
         until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
                 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                         read -rp "Select one client [1]: " CLIENT_NUMBER
                 else
                         read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
@@ -215,20 +212,20 @@ echo -e "Path          : /worryfree"
 echo -e "Path          : http://bug/worryfree" 
 echo -e "Path          : /kuota-habis" 
 echo -e "ServiceName   : vmess-grpc" 
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS : "
 echo -e "${vmesslink1}" 
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link none TLS : "
 echo -e "${vmesslink2}" 
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link GRPC : "
 echo -e "${vmesslink3}"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
@@ -315,19 +312,19 @@ echo -e "Path           : /worryfree"
 echo -e "Path           : http://bug/worryfree" 
 echo -e "Path           : /kuota-habis" 
 echo -e "ServiceName    : vmess-grpc"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS       : ${vmesslink1}"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link none TLS  : ${vmesslink2}"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link gRPC      : ${vmesslink3}"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Expired On     : $exp"
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vmess
 }
@@ -366,16 +363,13 @@ lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo -e "$jum2";
-echo -e "─────────────────────────────────────────────────" | lolcat
+echo "-------------------------------"
 fi
 rm -rf /tmp/ipxray.txt
 done
 rm -rf /tmp/other.txt
 
 echo ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
@@ -385,29 +379,26 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                   RENEW VMESS                   │" | lolcat
+echo -e "│                XRAY VMESS RENEW                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
-                echo -e "─────────────────────────────────────────────────" | lolcat
+                echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
         read -n 1 -s -r -p "Press any key to back on menu"
         menu
         fi
 
         clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                    RENEW VMESS                  │" | lolcat
+echo -e "│                XRAY VMESS RENEW                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
-    echo -e "─────────────────────────────────────────────────" | lolcat
+    echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
@@ -424,17 +415,17 @@ echo -e "└──────────────────────�
     systemctl restart xray > /dev/null 2>&1
     clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│             SUCCESFULL RENEW VMESS              │" | lolcat
+echo -e "│            XRAY VMESS RENEW SUCCESS             │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     echo " Client Name : $user"
     echo " Expired On  : $exp4"
     echo ""
-    echo -e "─────────────────────────────────────────────────" | lolcat
+    echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
   fi
@@ -444,29 +435,26 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               DELETE VMESS ACCOUNT              │" | lolcat
+echo -e "│               DELETE XRAY VMESS                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
-                echo -e "─────────────────────────────────────────────────" | lolcat
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
+                echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                 read -n 1 -s -r -p "Press any key to back on menu"
         menu
         fi
 
         clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│               DELETE VMESS ACCOUNT              │" | lolcat
+echo -e "│               DELETE XRAY VMESS                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo "  User       Expired  " 
-        echo -e "─────────────────────────────────────────────────" | lolcat
+        echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
     red "tap enter to go back"
-    echo -e "─────────────────────────────────────────────────" | lolcat
+    echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         read -rp "Input Username : " user
     if [ -z $user ]; then
     menu
@@ -476,15 +464,15 @@ echo -e "└──────────────────────�
     systemctl restart xray > /dev/null 2>&1
     clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│           DELETE VMESS ACCOUNT SUCCESS          │" | lolcat
+echo -e "│               DELETE XRAY SUCCESS               │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo " Client Name : $user"
     echo " Expired On  : $exp"
-    echo -e "─────────────────────────────────────────────────" | lolcat
+    echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
-    echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-    echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
-    echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     read -n 1 -s -r -p "Press any key to back on menu"
     
     menu
