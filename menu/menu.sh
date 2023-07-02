@@ -174,7 +174,8 @@ fi
 echo -e " ${BICyan}│  ${BIBlue}OS VPS            :  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-` $NC
 echo -e " ${BICyan}│  ${BIBlue}Memory Usage      :  ${BICyan}$uram / $tram ${NC}"
 echo -e " ${BICyan}│  ${BIBlue}CPU Usage         :  ${BICyan}$cpu_usage ${NC}"
-echo -e " ${BICyan}│  ${BIBlue}Current Domain    :  ${BICyan}$(cat /etc/xray/domain)${NC}"echo -e " ${BICyan}│  ${BIBlue}IP VPS            :  ${BICyan}$IPVPS${NC}"
+echo -e " ${BICyan}│  ${BIBlue}Current Domain    :  ${BICyan}$(cat /etc/xray/domain)${NC}"
+echo -e " ${BICyan}│  ${BIBlue}IP VPS            :  ${BICyan}$IPVPS${NC}"
 echo -e " ${BICyan}│  ${BIBlue}ISP VPS           :  ${BICyan}$ISPVPS${NC}"
 echo -e " ${BICyan}│  ${BIBlue}REGION            :  ${BICyan}$(curl -s ipinfo.io/timezone )${NC}"
 echo -e " ${BICyan}│  ${BIBlue}DATE&TIME         :  ${BICyan}$( date -d "0 days" +"%d-%m-%Y | %X" ) ${NC}"
@@ -182,16 +183,16 @@ echo -e " ${BICyan}└───────────────────�
 echo -e "     ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r"
 echo -e "     ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} SSH${NC}(${GREEN}menu-ssh${NC})" 
-echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} VMESS${NC}(${GREEN}menu-vmess${NC})"    
-echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} VLESS${NC}(${GREEN}menu-vless${NC})"    
-echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} TROJAN${NC}(${GREEN}menu-trojan${NC})" 
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}(${GREEN}menu-ss${NC})"    
-echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}(${GREEN}menu-backup${NC})"    
-echo -e "     ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}(${GREEN}menu-set${NC})"    
-echo -e "     ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}(${GREEN}info${NC})"  
-echo -e "     ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}(${GREEN}infoserv${NC})"    
-echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}(${GREEN}exit${NC})"  
+echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} SSH${NC}" 
+echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} VMESS${NC}"    
+echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} VLESS${NC}"    
+echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} TROJAN${NC}" 
+echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}"    
+echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}"    
+echo -e "     ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
+echo -e "     ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"  
+echo -e "     ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}"    
+echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}"  
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 DATE=$(date +'%d %B %Y')
 datediff() {
