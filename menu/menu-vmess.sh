@@ -402,7 +402,7 @@ echo -e "└──────────────────────�
         clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                    RENEW VMESS                  │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat"
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
@@ -425,7 +425,7 @@ echo -e "└──────────────────────�
     clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│             SUCCESFULL RENEW VMESS              │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat"
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     echo " Client Name : $user"
     echo " Expired On  : $exp4"
@@ -445,7 +445,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│               DELETE VMESS ACCOUNT              │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat"
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -460,7 +460,7 @@ echo -e "└──────────────────────�
         clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│               DELETE VMESS ACCOUNT              │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat"
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo "  User       Expired  " 
         echo -e "─────────────────────────────────────────────────" | lolcat
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
@@ -477,7 +477,7 @@ echo -e "└──────────────────────�
     clear
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│           DELETE VMESS ACCOUNT SUCCESS          │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat"
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo " Client Name : $user"
     echo " Expired On  : $exp"
     echo -e "─────────────────────────────────────────────────" | lolcat
