@@ -101,9 +101,9 @@ fi
 portsshws=`cat /root/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}'`
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;41;36m        Create SSH Account            \E[0m"
-echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               CREATE SSH ACCOUNT                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
@@ -129,8 +129,9 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 if [[ ! -z "${PID}" ]]; then
-echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                   SSH ACCOUNT                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
@@ -150,16 +151,19 @@ echo -e "${BIBlue}════════════════════${
 echo -e "Payload WSS"
 echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
 echo -e "${BIBlue}════════════════════${NC}"
-echo -e "${BICyan} Cobek Sawit Tunnel${NC}" 
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 
 else
 
-echo -e "${BIBlue}═════SSH ACCOUNTS═════${NC}"
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                   SSH ACCOUNT                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Username   : $Login" 
 echo -e "Password   : $Pass"
 echo -e "Expired On : $exp" 
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "─────────────────────────────────────────────────" | lolcat
 echo -e "IP         : $IP" 
 echo -e "Host       : $domen" 
 echo -e "OpenSSH    : $opensh"
@@ -168,14 +172,16 @@ echo -e "SSH-WS     : $portsshws"
 echo -e "SSH WS SSL : $wsssl" 
 echo -e "SSL/TLS    : $ssl" 
 echo -e "UDPGW      : 7100-7300" 
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "─────────────────────────────────────────────────" | lolcat
 echo -e "Payload WS"
 echo -e "GET / HTTP/1.1[crlf]Host: $domen[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "─────────────────────────────────────────────────" | lolcat
 echo -e "Payload WSS"
 echo -e "GET wss://[host] HTTP/1.1[crlf]Host: bug.com[crlf]Connection: Arz-Alive[crlf]User-Agent: [ua][crlf]Upgrade: ws[crlf][crlf]"
-echo -e "${BIBlue}════════════════════${NC}"
-echo -e "${BICyan} Cobek Sawit Tunnel${NC}" 
+echo -e "─────────────────────────────────────────────────" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 fi
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
