@@ -11,8 +11,10 @@
  " | lolcat
 
 
-echo -e ">>>>>>>>>>Welcome to AutoScript Premium V2<<<<<<<<<<
->>>>>>>>>>>>>>>>>>AUTOSCRIPT BY Cobek Sawit Tunnel<<<<<<<<<<<<<<<<<" | lolcat
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               AUTOSCRIPT PREMIUM                │" | lolcat
+echo -e "│             BY COBEK SAWIT TUNNELL              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 
 echo -e ">Support OS 
 For Ubuntu 18.04 & Ubuntu 20.04 & Ubuntu 22.04 
@@ -22,7 +24,7 @@ echo -e "Contact Owner AutoScript
 > WA: 083831678849
 > TELEGRAM: t.me/cobeksawitofficial" | lolcat
 
-echo -e "Thanks for your Order Arz AutoScript" | lolcat
+echo -e "Thanks for your Order Cobek Sawit Tunnel" | lolcat
 echo ""
 read -n 1 -s -r -p "  Press any key to Back to Menu"
 menu
