@@ -488,7 +488,7 @@ echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} Create Vmess Account  ${
 echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} Trial Vmess Account   ${NC}  "
 echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} Delete Account Vmess  ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} Renew Account Vmess  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} Cek User XRAY   ${NC}  "
+echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} Cek User Login   ${NC}  "
 echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} Detail Vmess Account  ${NC}   "
 echo -e "     ${BICyan}[${BIGreen}0${BICyan}]${BIGreen} Back To Menu${NC}"
 echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} Exit   ${NC}  "
