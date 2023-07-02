@@ -194,18 +194,12 @@ clear;clear;clear
 
 # // Starting Setup Domain
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
-echo -e "Anda Ingin Menggunakan Domain Pribadi ?"
-echo -e "Atau Ingin Menggunakan Domain Otomatis ?"
-echo -e "Jika Ingin Menggunakan Domain Pribadi, Ketik ${GREEN}1${NC}"
-echo -e "dan Jika Ingin menggunakan Domain Otomatis, Ketik ${GREEN}2${NC}"
+echo -e "1. Menggunakan Domain Pribadi ?"
+echo -e "2. Menggunakan Domain Otomatis ?"
 echo -e "${YELLOW}-----------------------------------------------------${NC}"
 echo ""
-
 read -p "$( echo -e "${GREEN}Input Your Choose ? ${NC}(${YELLOW}1/2${NC})${NC} " )" choose_domain
-
-# // Validating Automatic / Private
 if [[ $choose_domain == "2" ]]; then # // Using Automatic Domain
-
 # // Folder Sistem Yang Tidak Boleh Di Hapus
 mkdir -p /usr/bin
 # // Remove File & Directory
