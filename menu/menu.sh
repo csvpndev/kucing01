@@ -162,10 +162,10 @@ ISPVPS=$( curl -s ipinfo.io/org )
 
 clear
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │                  Cobek Sawit Tunnel                 │" | lolcat
+echo -e " │                  COBEK SAWIT TUNNEL                 │" | lolcat
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │  ${BIBlue}Premium Version   :  ${BIGreen}Multiport XRAY V2${NC}" 
+echo -e "${BICyan} │  ${BIBlue}Premium Version   :  ${BIGreen}Multiport XRAY${NC}" 
 if [ "$cekup" = "day" ]; then
 echo -e " ${BICyan}│  ${BIBlue}System Uptime     :  ${BICyan}$uphours $upminutes $uptimecek${NC}"
 else
@@ -183,11 +183,11 @@ echo -e " ${BICyan}└───────────────────�
 echo -e "     ${BIBlue} SSH ${NC}: $ressh"" ${BIBlue} NGINX ${NC}: $resngx"" ${BIBlue}  XRAY ${NC}: $resv2r"" ${BIBlue} TROJAN ${NC}: $resv2r"
 echo -e "     ${BIBlue}          DROPBEAR ${NC}: $resdbr" "${BIBlue} SSH-WS ${NC}: $ressshws"
 echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} SSH${NC}               ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
-echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} VMESS${NC}             ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
-echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} VLESS${NC}             ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
-echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} TROJAN${NC}            ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}       ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}"     
+echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} MENU SSH${NC}                  ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} BACKUP/RESTORE${NC}" 
+echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} MENU VMESS${NC}                ${BICyan}[${BIGreen}7${BICyan}]${BIGreen} SETTINGS${NC}"    
+echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} MENU VLESS${NC}                ${BICyan}[${BIGreen}8${BICyan}]${BIGreen} INFO-SCRIPT${NC}"    
+echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} MENU TROJAN${NC}               ${BICyan}[${BIGreen}9${BICyan}]${BIGreen} INFO-SERVER${NC}" 
+echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} SHADOWSOCKS${NC}               ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT MAIN MENU${NC}"     
 echo -e " └─────────────────────────────────────────────────────┘" | lolcat
 DATE=$(date +'%d %B %Y')
 datediff() {
