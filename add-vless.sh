@@ -101,18 +101,18 @@ fi
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-echo -e "\E[44;1;39m              Create Xray/Vless Account            \E[0m"
-echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CREATE VLESS ACCOUNT               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 
                 read -rp "User: " -e user
                 CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
                 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
-                echo -e "\033[0;34mт┌─────────────────────────────────────────────────┐\033[0m"
-                echo -e "\E[44;1;39m              Create Xray/Vless Account             \E[0m"
-                echo -e "\033[0;34mт└─────────────────────────────────────────────────┘\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CREATE VLESS ACCOUNT               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                         echo ""
                         echo "A client with the specified name was already created, please choose another name."
                         echo ""
@@ -133,8 +133,9 @@ vlesslink2="vless://${uuid}@${domain}:$none?path=/vless&encryption=none&type=ws#
 vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
 clear
-echo -e "${BIBlue}═════XRAY/VLESS═════${NC}"
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  VLESS ACCOUNT                  │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks       : ${user}" 
 echo -e "Expired On    : $exp" 
 echo -e "Domain        : ${domain}" 
@@ -146,17 +147,19 @@ echo -e "Encryption    : none"
 echo -e "Network       : ws" 
 echo -e "Path          : /vless" 
 echo -e "Path          : vless-grpc"  
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS :"
 echo -e "${vlesslink1}" 
-echo -e "${BIBlue}════════════════════${NC}"   
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"   
 echo -e "Link none TLS : "
 echo -e "${vlesslink2}" 
-echo -e "${BIBlue}════════════════════${NC}"
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link GRPC : "
 echo -e "${vlesslink3}" 
-echo -e "${BIBlue}════════════════════${NC}" 
-echo -e "${BICyan} Cobek Sawit Tunnel${NC}" 
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" 
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNEL                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 
