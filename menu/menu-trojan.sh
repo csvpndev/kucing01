@@ -107,18 +107,18 @@ clear
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\\E[0;41;36m  Check Detail XRAY TrojanWS     \E[0m"
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CHECK DETAIL TROJAN                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 clear
                 exit 1
         fi
 
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m  Check Detail XRAY TrojanWS     \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CHECK DETAIL TROJAN                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
         echo " Select the existing client to view the config"
         echo " Press CTRL+C to return"
                 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -144,8 +144,9 @@ trojanlink="trojan://${uuid}@isi_bug_disini:443?path=%2Ftrojan-ws&security=tls&h
 
 clear
 echo -e ""
-echo -e "$BIBlue══════XRAY/TROJAN══════${NC}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DETAIL TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Host/IP        : ${domain}"
 echo -e "Expired On     : $exp"
@@ -154,11 +155,15 @@ echo -e "Port gRPC      : 443"
 echo -e "Key            : ${uuid}"
 echo -e "Path           : /trojan-ws"
 echo -e "ServiceName    : trojan-grpc"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link TLS       : ${trojanlink}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link gRPC      : ${trojanlink1}"
-echo -e "\033[0;34m══════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-trojan
@@ -179,8 +184,9 @@ systemctl restart xray
 trojanlink1="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 trojanlink="trojan://${uuid}@isi_bug_disini:443?path=%2Ftrojan-ws&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 clear
-echo -e "$BIBlue══════XRAY/TROJAN══════${NC}"
-echo -e "\033[0;34m═══════════════════════\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DETAIL TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Host/IP        : ${domain}"
 echo -e "Port TLS       : 443"
@@ -188,13 +194,17 @@ echo -e "Port gRPC      : 443"
 echo -e "Key            : ${uuid}"
 echo -e "Path           : /trojan-ws"
 echo -e "ServiceName    : trojan-grpc"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link TLS       : ${trojanlink}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link gRPC      : ${trojanlink1}"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Expired On     : $exp"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-trojan
@@ -203,9 +213,9 @@ function cekws() {
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`);
-echo "-------------------------------";
-echo "-----=[ XRAY User Login ]=-----";
-echo "-------------------------------";
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                USER LOGIN TROJAN                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -233,7 +243,12 @@ lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo -e "$jum2";
-echo "-------------------------------"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+    echo ""
 fi
 rm -rf /tmp/ipxray.txt
 done
@@ -247,9 +262,9 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m            Renew Trojan             \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              RENEW TROJAN ACCOUNT               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -260,9 +275,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\\E[0;41;36m            Renew Trojan             \E[0m"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              RENEW TROJAN ACCOUNT               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
@@ -283,14 +298,18 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Trojan  Account Was Successfully Renewed"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              RENEW TROJAN SUCCESS               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     echo " Client Name : $user"
     echo " Expired On  : $exp4"
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
@@ -300,9 +319,9 @@ function delws() {
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m       Delete Trojan  Account        \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DELETE TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -312,9 +331,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\\E[0;41;36m       Delete Trojan  Account        \E[0m"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DELETE TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo "  User       Expired  " 
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
@@ -329,12 +348,16 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Trojan  Account Deleted Successfully"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DELETE TROJAN SUCCESS              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo " Client Name : $user"
     echo " Expired On  : $exp"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     
