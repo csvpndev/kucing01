@@ -109,26 +109,26 @@ clear
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\\E[0;41;36m     Check Detail XRAY Vless     \E[0m"
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                CEK DETAIL VMESS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 clear
                 exit 1
         fi
 
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m     Check Detail XRAY Vless     \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                CEK DETAIL VMESS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
         echo " Select the existing client to view the config"
         echo " Press CTRL+C to return"
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         echo "     No  User   Expired"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | nl -s ') '
         until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
                 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-        echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
                         read -rp "Select one client [1]: " CLIENT_NUMBER
                 else
                         read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
@@ -148,8 +148,9 @@ vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&
 
 clear
 echo -e ""
-echo -e "\033[0;34m═══════XRAY/VLESS═══════${NC}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                   XRAY VLESS                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Expired On     : $exp"
@@ -161,13 +162,17 @@ echo -e "Encryption     : none"
 echo -e "Network        : ws"
 echo -e "Path           : /vless"
 echo -e "Path           : vless-grpc"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS       : ${vlesslink1}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link none TLS  : ${vlesslink2}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+hecho -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link gRPC      : ${vlesslink3}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vless
@@ -187,8 +192,9 @@ vlesslink2="vless://${uuid}@${domain}:80?path=/vless&encryption=none&type=ws#${u
 vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
 clear
-echo -e "\033[0;34m═══════XRAY/VLESS═══════${NC}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                   XRAY VLESS                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Port TLS       : 443"
@@ -199,15 +205,19 @@ echo -e "Encryption     : none"
 echo -e "Network        : ws"
 echo -e "Path           : /vless"
 echo -e "Path           : vless-grpc"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS       : ${vlesslink1}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link none TLS  : ${vlesslink2}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link gRPC      : ${vlesslink3}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Expired On     : $exp"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-vless
@@ -216,9 +226,9 @@ function cekws() {
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`);
-echo "-------------------------------";
-echo "-----=[ XRAY User Login ]=-----";
-echo "-------------------------------";
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│            XRAY VLESS USER LOGIN                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -246,12 +256,16 @@ lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo -e "$jum2";
-echo "-------------------------------"
+echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 fi
 rm -rf /tmp/ipxray.txt
 done
 rm -rf /tmp/other.txt
 
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
@@ -261,9 +275,9 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\\E[0;41;36m            Renew Vless            \E[0m"
-        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  RENEW VLESS                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -274,9 +288,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "\\E[0;41;36m            Renew Vless            \E[0m"
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  RENEW VLESS                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
@@ -297,15 +311,19 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo " Vless Account Was Successfully Renewed"
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              VLESS SUCCESS RENEW                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     echo " Client Name : $user"
     echo " Expired On  : $exp4"
     echo ""
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
   fi
@@ -314,9 +332,9 @@ function delws() {
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-        echo -e "\\E[0;41;36m       Delete XRAY  Account        \E[0m"
-        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               DELETE XRAY VLESS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -326,9 +344,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "\\E[0;41;36m       Delete XRAY Account        \E[0m"
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               DELETE XRAY VLESS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo "  User       Expired  " 
         echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
@@ -343,13 +361,17 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo " XRAY Account Deleted Successfully"
-    echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              DELETE VLESS SUCCES                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo " Client Name : $user"
     echo " Expired On  : $exp"
     echo -e "$COLOR1━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     
     menu
