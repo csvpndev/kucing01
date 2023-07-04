@@ -109,9 +109,9 @@ off='\x1b[m'
 
 clear
 echo -e ""
-echo -e "${cyan}======================================${off}"
-echo -e        "           BANDWITH MONITOR " | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 BANDWITH MONITOR                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "  ${BICyan}[${BIGreen}1${BICyan}]${BIGreen}   Lihat Total Bandwith Tersisa${NC}"
 
 echo -e "  ${BICyan}[${BIGreen}2${BICyan}]${BIGreen}   Tabel Penggunaan Setiap 5 Menit${NC}"
@@ -133,140 +133,145 @@ echo -e "  ${BICyan}[${BIGreen}10${BICyan}]${BIGreen}  Lihat Trafik Penggunaan A
 echo -e "  ${BICyan}[${BIGreen}0${BICyan}]${BIGreen}   Back To Menu${NC}"
 
 echo -e "  ${BICyan}[${BIGreen}x${BICyan}]${BIGreen}   Exit${NC}"
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${green}"
 read -p "     [#]  Masukkan Nomor :  " noo
 echo -e "${off}"
 
 case $noo in
 1)
-echo -e "${cyan}======================================${off}"
-echo -e "    TOTAL BANDWITH SERVER TERSISA" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│          TOTAL BANDWITH SERVER TERSISA          │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 2)
-echo -e "${cyan}======================================${off}"
-echo -e "  PENGGUNAAN BANDWITH SETIAP 5 MENIT" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│        PENGGUNAAN BANDWITH SETIAP 5 MENIT       │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -5
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 3)
-echo -e "${cyan}======================================${off}"
-echo -e "    PENGGUNAAN BANDWITH SETIAP JAM" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│         PENGGUNAAN BANDWITH SETIAP SEJAM        │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -h
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 4)
-echo -e "${cyan}======================================${off}"
-echo -e "   PENGGUNAAN BANDWITH SETIAP HARI" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│         PENGGUNAAN BANDWITH SETIAP HARI         │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -d
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 5)
-echo -e "${cyan}======================================${off}"
-echo -e "   PENGGUNAAN BANDWITH SETIAP BULAN" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│         PENGGUNAAN BANDWITH SETIAP BULAN        │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -m
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 6)
-echo -e "${cyan}======================================${off}"
-echo -e "   PENGGUNAAN BANDWITH SETIAP TAHUN" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│         PENGGUNAAN BANDWITH SETIAP TAHUN        │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -y
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 7)
-echo -e "${cyan}======================================${off}"
-echo -e "    PENGGUNAAN BANDWITH TERTINGGI" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│          PENGGUNAAN BANDWITH TERTINGGI          │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -t
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 8)
-echo -e "${cyan}======================================${off}"
-echo -e " GRAFIK BANDWITH TERPAKAI SETIAP JAM" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│      GRAFIK BANDWITH TERPAKAI SETIAP JAM        │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -hg
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 9)
-echo -e "${cyan}======================================${off}"
-echo -e "  LIVE PENGGUNAAN BANDWITH SAAT INI" | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│            LIVE BANDWITH SAAT INI               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e " ${green}CTRL+C Untuk Berhenti!${off}"
 echo -e ""
 
 vnstat -l
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
 10)
-echo -e "${cyan}======================================${off}"
-echo -e "   LIVE TRAFIK PENGGUNAAN BANDWITH " | lolcat
-echo -e "${cyan}======================================${off}"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│     LIVE TRAFIK PENGGUNAAN BANDWITH SAAT INI    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 
 vnstat -tr
 
 echo -e ""
-echo -e "${cyan}======================================${off}"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "$baris2" | lolcat
 ;;
 
