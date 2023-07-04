@@ -1,5 +1,25 @@
 #!/bin/bash
 #wget https://github.com/${GitUser}/
+BIBlack='\033[1;90m'      # Black
+BIRed='\033[1;91m'        # Red
+BIGreen='\033[1;92m'      # Green
+BIYellow='\033[1;93m'     # Yellow
+BIBlue='\033[1;94m'       # Blue
+BIPurple='\033[1;95m'     # Purple
+BICyan='\033[1;96m'       # Cyan
+BIWhite='\033[1;97m'      # White
+UWhite='\033[4;37m'       # White
+On_IPurple='\033[0;105m'  #
+On_IRed='\033[0;101m'
+IBlack='\033[0;90m'       # Black
+IRed='\033[0;91m'         # Red
+IGreen='\033[0;92m'       # Green
+IYellow='\033[0;93m'      # Yellow
+IBlue='\033[0;94m'        # Blue
+IPurple='\033[0;95m'      # Purple
+ICyan='\033[0;96m'        # Cyan
+IWhite='\033[0;97m'       # White
+NC='\e[0m'
 GitUser="csvpndev"
 if [ "${EUID}" -ne 0 ]; then
                 echo "You need to run this script as root"
@@ -28,7 +48,7 @@ Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_p
 Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
-version=$(cat /home/ver)
+version=$(cat /opt/.ver)
 new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/newversion | grep $version )
 #Status Version
 if [ $version = $new_version ]; then
@@ -38,19 +58,20 @@ sts="${Error}"
 fi
 clear
 echo ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$back_text                 \e[30m[\e[$box CHECK NEW UPDATE\e[30m ]                   \e[m"
-echo -e "   \e[$line--------------------------------------------------------\e[m"
-echo -e "   \e[$below VVERSION NOW >> $Info1"
-echo -e "   \e[$below SSTATUS UPDATE >> $sts"
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo -e "   [$below VERSION NOW >> $Info1"
+echo -e "   [$below STATUS UPDATE >> $sts"
 echo -e ""
 echo -e "       \e[1;31mWould you like to proceed?\e[0m"
 echo ""
 echo -e "            \e[0;32m[ Select Option ]\033[0m"
-echo -e "     \e[$number [1]\e[m \e[$below CCheck Script Update Now\e[m"
-echo -e "     \e[$number [x]\e[m \e[$below BBack To Menu\e[m"
+echo -e "     [$number [1]\e[m [$below CCheck Script Update Now\e[m"
+echo -e "     [$number [x]\e[m [$below BBack To Menu\e[m"
 echo -e ""
-echo -e "   \e[$line--------------------------------------------------------\e[m"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "\e[$line"
 read -p "PPlease Choose 1 or x : " option2
 case $option2 in
@@ -60,25 +81,44 @@ new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/new
 if [ $version = $new_version ]; then
 clear
 echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;31mChecking New Version, Please Wait...!\e[m"
 sleep 3
 clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;31mUpdate Not Available\e[m"
 echo ""
-clear
 sleep 1
+clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;36mYou Have The Latest Version\e[m"
 echo -e "\e[1;31mThankyou.\e[0m"
 sleep 2
 update
 fi
 clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;31mUpdate Available Now..\e[m"
 echo -e ""
 sleep 2
+clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
 sleep 2
 clear
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  MENU UPDATE                    │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mGetting New Version Script..\e[0m"
 sleep 1
 echo ""
@@ -89,12 +129,19 @@ chmod +x run-update
 # RUN UPDATE
 echo ""
 clear
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPlease Wait...!\e[0m"
 sleep 6
 clear
 echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
-sleep 2
+sleep 3
 cd /usr/bin
 wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/csvpndev/kucing/main/add-ws.sh"
 wget -q -O /usr/bin/add-ssws "https://raw.githubusercontent.com/csvpndev/kucing/main/add-ssws.sh"
@@ -114,8 +161,9 @@ wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/csvpndev/kucin
 wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-ss.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-backup.sh""
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu.sh"wget -q -O /usr/bin/webmin "https://raw.githubusercontent.com/csvpndev/kucing/main/options/webmin.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-backup.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu.sh"
+wget -q -O /usr/bin/webmin "https://raw.githubusercontent.com/csvpndev/kucing/main/options/webmin.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/csvpndev/kucing/main/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/csvpndev/kucing/main/options/update.sh"
 #wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/csvpndev/kucing/main/menu/menu-theme.sh"
@@ -133,7 +181,7 @@ chmod +x /usr/bin/restart
 chmod +x /usr/bin/tendang
 chmod +x /usr/bin/clearlog
 chmod +x /usr/bin/running
-chmod +x /usr/bin/cek-trafik
+#chmod +x /usr/bin/cek-trafik
 chmod +x /usr/bin/cek-speed
 chmod +x /usr/bin/cek-bandwidth
 chmod +x /usr/bin/limitspeed
@@ -154,25 +202,43 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 clear
 echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/version )
 sleep 1
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
 echo ""
 sleep 2
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mPatching... OK!\e[0m"
 sleep 1
 echo ""
+clear
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 PROSES UPDATE                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
 cd
-echo "$ver" > /home/ver
+echo "$ver" > /opt/.ver
 rm -f update.sh
 clear
 echo ""
-echo -e "\033[0;34m----------------------------------------\033[0m"
-echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
-echo -e "\033[0;34m----------------------------------------\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 SCRIPT UPDATED                  │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
