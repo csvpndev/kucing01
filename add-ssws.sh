@@ -113,17 +113,19 @@ fi
 
 tls="$(cat ~/log-install.txt | grep -w "Sodosok WS/GRPC" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-echo -e "\\E[0;41;36m           Create Sodosok Ws/Grpc Account         \E[0m"
-echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│       CREATE SHADOWSOCK WS/GRPC ACCOUN          │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 
                 read -rp "User: " -e user
                 CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
                 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 clear
-            echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"            echo -e "\\E[0;41;36m          Create Sodosok Ws/Grpc Account          \E[0m"
-            echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"                        echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│       CREATE SHADOWSOCK WS/GRPC ACCOUNT         │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat                       
+            echo ""
                         echo "A client with the specified name was already created, please choose another name."
                         echo ""
                         read -n 1 -s -r -p "Press any key to back on menu"
@@ -373,8 +375,9 @@ END
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "${BIBlue}══════XRAY/SSWS═══════${NC}"
-echo -e "${BIBlue}══════════════════════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                SHADOWSOCK ACCOUNT               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks      : ${user}" 
 echo -e "Expired On   : $exp"  
 echo -e "Domain       : ${domain}"  
@@ -385,14 +388,17 @@ echo -e "Cipers       : aes-128-gcm"
 echo -e "Network      : ws/grpc"  
 echo -e "Path         : /ss-ws"  
 echo -e "ServiceName  : ss-grpc"  
-echo -e "${BIBlue}══════════════════════${NC}" 
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link TLS : "
 echo -e "${shadowsockslink}"  
-echo -e "${BIBlue}══════════════════════${NC} "
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link GRPC : "
 echo -e "${shadowsockslink1}"  
-echo -e "${BIBlue}══════════════════════${NC} "
-echo -e "${BICyan} Cobek Sawit Tunnel${NC}" 
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""  
 read -n 1 -s -r -p "Press any key to back on menu"
 
