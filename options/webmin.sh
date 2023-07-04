@@ -115,12 +115,16 @@ Error="${Red_font_prefix}[Not Installed]${Font_color_suffix}"
 cek=$(netstat -ntlp | grep 10000 | awk '{print $7}' | cut -d'/' -f2)
 function install () {
 IP=$(wget -qO- ifconfig.co);
-echo " Menambahkan Repositori Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Menambahkan Repositori Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 sh -c 'echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list'
 apt install gnupg gnupg1 gnupg2 -y
 wget http://www.webmin.com/jcameron-key.asc
 apt-key add jcameron-key.asc
-echo " Mulai Install Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Mulai Install Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 clear
 sleep 0.5
 apt update > /dev/null 2>&1
@@ -130,29 +134,41 @@ sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 rm -f /root/jcameron-key.asc
 clear
 echo ""
-echo " Berhasil Install Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Berhasil Install Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo " $IP:10000"
 }
 function restart () {
-echo " Mulai Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo    "      Mulai Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 sleep 0.5
 service webmin restart > /dev/null 2>&1
 echo " Mulai Uninstall Webmin"
 clear
 echo ""
-echo " Berhasil Restart Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo    "      Berhasil Restart Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 }
 function uninstall () {
-echo " Menghapus Repositori Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Menghapus Repositori Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 rm -f /etc/apt/sources.list.d/webmin.list
 apt update > /dev/null 2>&1
-echo " Mulai Uninstall Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Mulai Uninstall Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 clear
 sleep 0.5
 apt autoremove --purge webmin -y > /dev/null 2>&1
 clear
 echo ""
-echo " Berhasil Uninstall Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "      Berhasil Uninstall Webmin"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 }
 if [[ "$cek" = "perl" ]]; then
 sts="${Info}"
@@ -160,13 +176,14 @@ else
 sts="${Error}"
 fi
 clear
-echo -e " ==============================" | lolcat
-echo -e "           Webmin Menu         "
-echo -e " ==============================" | lolcat
+echo -e ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                   MENU WEBMIN                   │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e " Status $sts"
-echo -e "  1. Install Webmin"
-echo -e "  2. Restart Webmin"
-echo -e "  3. Uninstall Webmin"
+echo -e "  1. INSTALL WEBMIN"
+echo -e "  2. RESTART WEBMIN"
+echo -e "  3. UNINSTALL WEBMIN"
 echo -e " "
 echo -e " Press CTRL+C to return"
 read -rp " Please Enter The Correct Number : " -e num
