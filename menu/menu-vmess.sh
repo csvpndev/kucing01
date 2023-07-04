@@ -484,14 +484,14 @@ echo -e "┌──────────────────────�
 echo -e "│                    VMESS MENU                   │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} Create Vmess Account  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} Trial Vmess Account   ${NC}  "
-echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} Delete Account Vmess  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} Renew Account Vmess  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} Cek User Login   ${NC}  "
-echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} Detail Vmess Account  ${NC}   "
-echo -e "     ${BICyan}[${BIGreen}0${BICyan}]${BIGreen} Back To Menu${NC}"
-echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} Exit   ${NC}  "
+echo -e "     ${BICyan}[${BIGreen}1${BICyan}]${BIGreen} CREATE ACCOUNT  ${NC}   "
+echo -e "     ${BICyan}[${BIGreen}2${BICyan}]${BIGreen} CREATE TRIAL   ${NC}  "
+echo -e "     ${BICyan}[${BIGreen}3${BICyan}]${BIGreen} DELETE ACCOUNT  ${NC}   "
+echo -e "     ${BICyan}[${BIGreen}4${BICyan}]${BIGreen} RENEW ACCOUNT  ${NC}   "
+echo -e "     ${BICyan}[${BIGreen}5${BICyan}]${BIGreen} CEK USER LOGIN   ${NC}  "
+echo -e "     ${BICyan}[${BIGreen}6${BICyan}]${BIGreen} CEK DETAIL ACCOUNT  ${NC}   "
+echo -e "     ${BICyan}[${BIGreen}0${BICyan}]${BIGreen} BACK TO MENU${NC}"
+echo -e "     ${BICyan}[${BIGreen}x${BICyan}]${BIGreen} EXIT   ${NC}  "
 echo -e "└──────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -p " Select menu : " opt
