@@ -52,15 +52,16 @@ echo -e ""
 echo -e " ┌─────────────────────────────────────────────────┐" | lolcat
 echo -e " │                  MENU UPDATE                    │" | lolcat
 echo -e " └─────────────────────────────────────────────────┘" | lolcat
-echo -e "    [ VERSION NOW >> $Info1                   ]"
-echo -e "    [ STATUS UPDATE >> $sts                   ]"
+echo -e "     VERSION NOW >> $Info1                   "
+echo -e "     STATUS UPDATE >> $sts                   "
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "       ${BIRed}Would you like to proceed?${NC}"
+echo -e "       ${BIRed}WOULD YOU LIKE TO PROCEED ?${NC}"
 echo ""
-echo -e "    [              Select Option                 ]${NC}"
-echo -e "    [1] Check Script Update Now${NC}"
-echo -e "    [x] Back To Menu${NC}"
+echo -e "    $BIWhite[              SELECT OPTION                 ]${NC}"
+echo -e ""
+echo -e "    [1] CHECK UPDATE NOW${NC}"
+echo -e "    [x] BACK TO MENU${NC}"
 echo -e ""
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
@@ -69,7 +70,7 @@ echo -e " │              COBEK SAWIT TUNNEL                 │" | lolcat
 echo -e " └─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 echo -e ""
-read -p "      Please Choose 1 or x : " option2
+read -p "      PLEASE CHOOSE 1 or x : " option2
 case $option2 in
 1)
 version=$(cat /opt/.ver)
