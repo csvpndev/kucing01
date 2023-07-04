@@ -30,19 +30,9 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
                 exit 1
 fi
 echo ""
-version=$(cat /home/ver)
+version=$(cat /opt/.ver)
 ver=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/version )
 clear
-# LINE COLOUR
-line=$(cat /etc/line)
-# TEXT COLOUR BELOW
-below=$(cat /etc/below)
-# BACKGROUND TEXT COLOUR
-back_text=$(cat /etc/back)
-# NUMBER COLOUR
-number=$(cat /etc/number)
-# TEXT ON BOX COLOUR
-box=$(cat /etc/box)
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info1="${Green_font_prefix}($version)${Font_color_suffix}"
@@ -76,7 +66,7 @@ echo -e "\e[$line"
 read -p "PPlease Choose 1 or x : " option2
 case $option2 in
 1)
-version=$(cat /home/ver)
+version=$(cat /opt/.ver)
 new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/newversion | grep $version )
 if [ $version = $new_version ]; then
 clear
