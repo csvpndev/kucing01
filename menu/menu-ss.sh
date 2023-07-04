@@ -107,18 +107,18 @@ clear
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\\E[0;41;36m     Check Detail XRAY SSWS      \E[0m"
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               CHECK DETAIL SSWS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 clear
                 exit 1
         fi
 
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m     Check Detail XRAY SSWS      \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               CHECK DETAIL SSWS                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
         echo " Select the existing client to view the config"
         echo " Press CTRL+C to return"
                 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -149,9 +149,9 @@ shadowsocks_base64e=$(cat /tmp/log1)
 shadowsockslink="ss://${shadowsocks_base64e}@$domain:443?plugin=xray-plugin;mux=0;path=/ss-ws;host=$domain;tls#${user}"
 shadowsockslink1="ss://${shadowsocks_base64e}@$domain:443?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;tls#${user}"
 
-clear
-echo -e "$BICyan═══════XRAY/SSWS════════${NC}"
-echo -e "$BICyan════════════════════════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               SHADOWSOCK ACCOUNT                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks      : ${user}" 
 echo -e "Expired On   : $exp"  
 echo -e "Domain       : ${domain}"  
@@ -162,14 +162,17 @@ echo -e "Cipers       : aes-128-gcm"
 echo -e "Network      : ws/grpc"  
 echo -e "Path         : /ss-ws"  
 echo -e "ServiceName  : ss-grpc"  
-echo -e "$BICyan════════════════════════${NC}" 
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link TLS : "
 echo -e "${shadowsockslink}"  
-echo -e "$BICyan════════════════════════${NC} "
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link GRPC : "
 echo -e "${shadowsockslink1}"  
-echo -e "$BICyan════════════════════════${NC} "
-echo -e "$BICyan Cobek Sawit Tunnel${NC}" 
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat 
 echo ""  
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-ss
@@ -195,8 +198,9 @@ shadowsockslink1="ss://${shadowsocks_base64e}@${domain}:443?mode=gun&security=tl
 systemctl restart xray > /dev/null 2>&1
 service cron restart > /dev/null 2>&1
 clear
-echo -e "\033[0;34m═══════XRAY/SSWS════════${NC}"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               SHADOWSOCK ACCOUNT                │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Port TLS       : 443"
@@ -206,13 +210,17 @@ echo -e "Ciphers        : ${cipher}"
 echo -e "Network        : ws/grpc"
 echo -e "Path           : /ss-ws"
 echo -e "ServiceName    : ss-grpc"
-echo -e "\033[0;34m════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link TLS       : ${shadowsockslink}"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Link gRPC      : ${shadowsockslink1}"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Expired On     : $exp"
-echo -e "\033[0;34m═════════════════════════\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo "" | tee -a /etc/log-create-user.log
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-ss
@@ -221,9 +229,9 @@ function cekws() {
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/config.json | grep '###' | cut -d ' ' -f 2 | sort | uniq`);
-echo "-------------------------------";
-echo "-----=[ XRAY User Login ]=-----";
-echo "-------------------------------";
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              USER LOGIN SHADOWSOCK              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -251,7 +259,11 @@ lastlogin=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo -e "$jum2";
-echo "-------------------------------"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 fi
 rm -rf /tmp/ipxray.txt
 done
@@ -266,9 +278,9 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
                 clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m            Renew Sodosok            \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                RENEW SHADOWSOCK                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -279,9 +291,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\\E[0;41;36m            Renew Sodosok            \E[0m"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                RENEW SHADOWSOCK                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
@@ -302,15 +314,20 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/### $user/c\### $user $exp4" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Sodosok Account Was Successfully Renewed"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│            RENEW SHADOWSOCK SUCCESS             │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo ""
     echo " Client Name : $user"
     echo " Expired On  : $exp4"
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
+    echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
   fi
@@ -319,9 +336,9 @@ function delws() {
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\\E[0;41;36m       Delete Sodosok Account        \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 DELETE SHADOWSOCK               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                 echo ""
                 echo "You have no existing clients!"
                 echo ""
@@ -331,9 +348,9 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
         fi
 
         clear
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\\E[0;41;36m       Delete Sodosok Account        \E[0m"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                 DELETE SHADOWSOCK               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo "  User       Expired  " 
         echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
@@ -348,13 +365,17 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/config.json")
     sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Sodosok Account Deleted Successfully"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│             DELETE SHADOWSOCK SUCCESS           │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
     echo " Client Name : $user"
     echo " Expired On  : $exp"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│               COBEK SAWIT TUNNELL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     
     menu
