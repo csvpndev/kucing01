@@ -35,9 +35,9 @@ ver=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/version )
 clear
 # CEK UPDATE
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info1="${Green_font_prefix}($version)${Font_color_suffix}"
-Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
-Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
+Info1="$BIWhite($version)${Font_color_suffix}"
+Info2="$BIWhite(LATEST VERSION)${Font_color_suffix}"
+Error="Version $BIWhite[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /opt/.ver)
 new_version=$( curl https://raw.githubusercontent.com/${GitUser}/kucing/main/newversion | grep $version )
 #Status Version
@@ -49,14 +49,14 @@ fi
 clear
 echo ""
 echo -e ""
-echo -e "┌─────────────────────────────────────────────────┐" | lolcat
-echo -e "│                  MENU UPDATE                    │" | lolcat
-echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "    [ VERSION NOW >> $Info1 ]"
-echo -e "    [ STATUS UPDATE >> $sts ]"
+echo -e " ┌─────────────────────────────────────────────────┐" | lolcat
+echo -e " │                  MENU UPDATE                    │" | lolcat
+echo -e " └─────────────────────────────────────────────────┘" | lolcat
+echo -e "    [ VERSION NOW >> $Info1                   ]"
+echo -e "    [ STATUS UPDATE >> $sts                   ]"
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "       Would you like to proceed?${NC}"
+echo -e "       ${BIRed}Would you like to proceed?${NC}"
 echo ""
 echo -e "    [              Select Option                 ]${NC}"
 echo -e "    [1] Check Script Update Now${NC}"
@@ -64,9 +64,9 @@ echo -e "    [x] Back To Menu${NC}"
 echo -e ""
 echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
-echo -e " │                  COBEK SAWIT TUNNEL                 │" | lolcat
-echo -e " └─────────────────────────────────────────────────────┘" | lolcat
+echo -e " ┌─────────────────────────────────────────────────┐" | lolcat
+echo -e " │              COBEK SAWIT TUNNEL                 │" | lolcat
+echo -e " └─────────────────────────────────────────────────┘" | lolcat
 echo -e ""
 echo -e ""
 read -p "      Please Choose 1 or x : " option2
@@ -234,6 +234,10 @@ clear
 echo ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                 SCRIPT UPDATED                  │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              COBEK SAWIT TUNNEL                 │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
