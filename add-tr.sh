@@ -94,6 +94,7 @@ red "Permission Denied!"
 exit 0
 fi
 clear
+rycle="/etc/limit"
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
@@ -124,12 +125,36 @@ echo -e "└──────────────────────�
         done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -p "Expired (days): " masaaktif
+read -rp " Quota Limit (MB) : " -e Quota
+read -rp " Limit (IP)       : " -e LimitIP
+read -rp "Expired (days): " masaaktif
+echo "${LimitIP}" > "${rycle}/trojan/limit/${user}"
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#trojangrpc$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
+
+#limit Quota
+if [ ! -e /etc/trojan ]; then
+  mkdir -p /etc/trojan
+fi
+
+if [ -z ${Quota} ]; then
+  Quota="0"
+fi
+
+c=$(echo "${Quota}" | sed 's/[^0-9]*//g')
+d=$((${c} * 1024 * 1024 * 1024))
+
+if [[ ${c} != "0" ]]; then
+  echo "${d}" >/etc/trojan/${user}
+fi
+DATADB=$(cat /etc/trojan/.trojan.db | grep "^###" | grep -w "${user}" | awk '{print $2}')
+if [[ "${DATADB}" != '' ]]; then
+  sed -i "/\b${user}\b/d" /etc/trojan/.trojan.db
+fi
+echo "### ${user} ${exp} ${uuid}" >>/etc/trojan/.trojan.db
 
 systemctl restart xray
 trojanlink="trojan://${uuid}@${domain}:${tr}?path=%2Ftrojan-ws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
@@ -141,8 +166,10 @@ echo -e "└──────────────────────�
 echo -e "Remarks     : ${user}" 
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
+echo -e "Location    : $CITY"
 echo -e "Port        : ${tr}" 
 echo -e "Key         : ${uuid}" 
+echo -e "Quota       : ${Quota} GB"
 echo -e "Path        : /trojan-ws"
 echo -e "Path WSS    : wss://yourbug/trojan-ws" 
 echo -e "ServiceName : trojan-grpc" 
