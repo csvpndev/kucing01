@@ -102,18 +102,18 @@ domain=$IP
 fi
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-echo -e "\E[0;41;36m               CREATE TROJAN ACCOUNT               \E[0m"
-echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CREATE TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 
                 read -rp "User: " -e user
                 user_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
                 if [[ ${user_EXISTS} == '1' ]]; then
 clear
-                echo -e "\033[0;34m┌─────────────────────────────────────────────────┐\033[0m"
-                echo -e "\E[0;41;36m               CREATE TROJAN ACCOUNT               \E[0m"
-                echo -e "\033[0;34m└─────────────────────────────────────────────────┘\033[0m"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│              CREATE TROJAN ACCOUNT              │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
                         echo ""
                         echo "A client with the specified name was already created, please choose another name."
                         echo ""
@@ -135,7 +135,9 @@ systemctl restart xray
 trojanlink="trojan://${uuid}@${domain}:${tr}?path=%2Ftrojan-ws&security=tls&host=bug.com&type=ws&sni=bug.com#${user}"
 trojanlink1="trojan://${uuid}@${domain}:${tr}?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
 clear
-echo -e "${BIBlue}══════XRAY/TROJAN═══════${NC}"
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                  TROJAN ACCOUNT                 │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo -e "Remarks     : ${user}" 
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
@@ -144,14 +146,17 @@ echo -e "Key         : ${uuid}"
 echo -e "Path        : /trojan-ws"
 echo -e "Path WSS    : wss://yourbug/trojan-ws" 
 echo -e "ServiceName : trojan-grpc" 
-echo -e "${BIBlue}════════════════════════${NC}"
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link WS : "
 echo -e "${trojanlink}" 
-echo -e "${BIBlue}════════════════════════${NC} "
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Link GRPC : "
 echo -e "${trojanlink1}"
-echo -e "${BIBlue}════════════════════════${NC}" 
-echo -e "${BICyan} Cobek Sawit Tunnel${NC}" 
+echo -e "${BIBlue}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" 
+echo ""
+echo -e "┌─────────────────────────────────────────────────┐" | lolcat
+echo -e "│                COBEK SAWIT TUNNEL               │" | lolcat
+echo -e "└─────────────────────────────────────────────────┘" | lolcat
 echo "" 
 read -n 1 -s -r -p "Press any key to back on menu"
 
