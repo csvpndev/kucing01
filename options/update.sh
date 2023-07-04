@@ -52,18 +52,24 @@ echo -e ""
 echo -e "┌─────────────────────────────────────────────────┐" | lolcat
 echo -e "│                  MENU UPDATE                    │" | lolcat
 echo -e "└─────────────────────────────────────────────────┘" | lolcat
-echo -e "   [$below VERSION NOW >> $Info1"
-echo -e "   [$below STATUS UPDATE >> $sts"
+echo -e "    [ VERSION NOW >> $Info1 ]"
+echo -e "    [ STATUS UPDATE >> $sts ]"
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "       \e[1;31mWould you like to proceed?\e[0m"
+echo -e "       Would you like to proceed?${NC}"
 echo ""
-echo -e "            \e[0;32m[ Select Option ]\033[0m"
-echo -e "     [$number [1]\e[m [$below CCheck Script Update Now\e[m"
-echo -e "     [$number [x]\e[m [$below BBack To Menu\e[m"
+echo -e "    [              Select Option                 ]${NC}"
+echo -e "    [1] Check Script Update Now${NC}"
+echo -e "    [x] Back To Menu${NC}"
 echo -e ""
-echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\e[$line"
-read -p "PPlease Choose 1 or x : " option2
+echo -e "${BICyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+echo -e " ┌─────────────────────────────────────────────────────┐" | lolcat
+echo -e " │                  COBEK SAWIT TUNNEL                 │" | lolcat
+echo -e " └─────────────────────────────────────────────────────┘" | lolcat
+echo -e ""
+echo -e ""
+read -p "      Please Choose 1 or x : " option2
 case $option2 in
 1)
 version=$(cat /opt/.ver)
