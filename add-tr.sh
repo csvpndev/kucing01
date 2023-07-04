@@ -125,8 +125,8 @@ echo -e "└──────────────────────�
         done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
-read -rp " Quota Limit (MB) : " -e Quota
-read -rp " Limit (IP)       : " -e LimitIP
+read -rp "Quota Limit (MB) : " -e Quota
+read -rp "Limit (IP)       : " -e LimitIP
 read -rp "Expired (days): " masaaktif
 echo "${LimitIP}" > "${rycle}/trojan/limit/${user}"
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -166,7 +166,7 @@ echo -e "└──────────────────────�
 echo -e "Remarks     : ${user}" 
 echo -e "Expired On  : $exp" 
 echo -e "Host/IP     : ${domain}" 
-echo -e "Location    : $CITY"
+echo -e "Location    : $(curl -s ipinfo.io/timezone )"
 echo -e "Port        : ${tr}" 
 echo -e "Key         : ${uuid}" 
 echo -e "Quota       : ${Quota} GB"
